@@ -32,6 +32,7 @@ import { green, red } from "@mui/material/colors";
 import { ThemeProvider, createTheme } from "@material-ui/core";
 import Services from "./Admin/Pages/Services";
 import Clients from "./Admin/Pages/Clients";
+import Homepage from "./Pages/Homepage";
 
 const theme = createTheme({
     palette: {
@@ -57,7 +58,10 @@ function App() {
             <Routes>
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />
-                <Route path="/" element={user ? <HrDashboard /> : <Login />} />
+                <Route
+                    path="/"
+                    element={user ? <HrDashboard /> : <Homepage />}
+                />
                 <Route
                     path="/hr/employees"
                     element={user ? <HrEmployees /> : <Login />}
